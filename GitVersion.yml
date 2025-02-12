@@ -1,0 +1,46 @@
+mode: ContinuousDelivery
+
+branches:
+
+  main:
+    regex: ^main$
+    label: ''
+    increment: Patch
+    track-merge-target: true
+  
+  develop:
+    regex: ^develop$
+    label: '-dev'
+    increment: Minor
+    track-merge-target: true
+  
+  feature:
+    regex: ^features?/.*$
+    increment: Minor
+  
+  bugfix:
+    regex: ^(bugfix|hotfix)/.*$
+    label: 'fix-{BranchName}'
+    increment: Patch
+  
+  release:
+    regex: ^releases?/.*$
+    label: '-rc'
+    increment: Patch
+    track-merge-target: true
+  
+  support:
+    regex: ^support/
+    label: 'support-{BranchName}'
+    increment: Patch
+    track-merge-target: true
+  
+  pull-request:
+    regex: ^refs/pull/
+    label: '-pr'
+    increment: Patch
+    track-merge-target: true
+
+  unknown:
+    label: '{BranchName}'
+    increment: Minor
