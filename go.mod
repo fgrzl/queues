@@ -1,6 +1,6 @@
 module github.com/fgrzl/queues
 
-go 1.23.5
+go 1.23.0
 
 require (
 	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.8.1
